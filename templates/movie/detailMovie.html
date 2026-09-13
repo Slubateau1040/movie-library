@@ -1,0 +1,9 @@
+<h1>{{ movie.title }}</h1>
+<h2>Genre : {{ movie.genre}}</h2>
+<p>Platform : {{ movie.platform }}</p>
+<p>Finished ? {{ movie.is_finished }}</p>
+<p>Rate : {{ movie.rating }}/10</p>
+
+<a href="{% url 'editMovie' movie.id %}">Edit</a>
+
+<a href="{% url 'deleteMovie' movie.id %}">Delete</a>

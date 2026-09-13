@@ -1,0 +1,7 @@
+<h1>List Movies</h1>
+
+{% for movie in movies %}
+    <li><a href="{% url 'detailMovie' movie.id%}">{{ movie.title }}</a></li>
+{% endfor %}
+
+<a href="{% url 'addMovie' %}">Add Movie</a>
