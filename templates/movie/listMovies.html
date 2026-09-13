@@ -1,5 +1,15 @@
 <h1>List Movies</h1>
 
+<form method="get">
+    <select name="genre">
+        <option value="">Select Genre</option>
+        {% for genre in genre_list %}
+            <option value="{{ genre }}">{{ genre }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Filter">
+</form>
+
 {% for movie in movies %}
     <li><a href="{% url 'detailMovie' movie.id%}">{{ movie.title }}</a></li>
 {% endfor %}

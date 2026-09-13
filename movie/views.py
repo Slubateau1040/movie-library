@@ -5,8 +5,13 @@ from .models import Movie
 
 # Create your views here.
 def listMovies(request):
-    movies = Movie.objects.all()
-    context = {'movies': movies}
+    genre_list = Movie.objects.values_list('genre', flat=True).distinct()
+    genre_select = request.GET.get('genre')
+    if genre_select:
+        movies = Movie.objects.filter(genre=genre_select)
+    else:
+        movies = Movie.objects.all()
+    context = {'movies': movies, 'genre_list': genre_list}
     return render(request, 'movie/listMovies.html', context)
 
 def detailMovie(request, movie_id):
