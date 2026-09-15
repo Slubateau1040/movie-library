@@ -1,17 +1,28 @@
-<h1>List Movies</h1>
+{% extends "base.html" %}
 
-<form method="get">
-    <select name="genre">
-        <option value="">Select Genre</option>
-        {% for genre in genre_list %}
-            <option value="{{ genre }}">{{ genre }}</option>
-        {% endfor %}
-    </select>
-    <input type="submit" value="Filter">
-</form>
+{% block content %}
+    <div id="list-title">
+        <h1>List Movies</h1>
+    </div>
 
-{% for movie in movies %}
-    <li><a href="{% url 'detailMovie' movie.id%}">{{ movie.title }}</a></li>
-{% endfor %}
+    <form method="get" class="filter-form">
+        <select name="genre">
+            <option value="">Select Genre</option>
+            {% for genre in genre_list %}
+                <option value="{{ genre }}">{{ genre }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Filter">
+    </form>
 
-<a href="{% url 'addMovie' %}">Add Movie</a>
+    {% for movie in movies %}
+       <div class="movie-card">
+        <a href="{% url 'detailMovie' movie.id %}">{{ movie.title }}</a>
+       </div>
+    {% endfor %}
+
+    <div class="add-movie">
+        <a href="{% url 'addMovie' %}">Add Movie</a>
+    </div>
+
+{% endblock %}

@@ -1,9 +1,28 @@
-<h1>{{ movie.title }}</h1>
-<h2>Genre : {{ movie.genre}}</h2>
-<p>Platform : {{ movie.platform }}</p>
-<p>Finished ? {{ movie.is_finished }}</p>
-<p>Rate : {{ movie.rating }}/10</p>
+{% extends 'base.html' %}
 
-<a href="{% url 'editMovie' movie.id %}">Edit</a>
+{% block content %}
+    <div class="movie-detail">
+        <h1>{{ movie.title }}</h1>
 
-<a href="{% url 'deleteMovie' movie.id %}">Delete</a>
+        <div class="movie-info">
+            <h2>Genre : {{ movie.genre}}</h2>
+            <p>Platform : {{ movie.platform }}</p>
+            <p>Finished ? {% if movie.is_finished %}✅{% else %}❌{% endif %}</p>
+            <p>Rate:
+                {% if movie.rating <= 3 %}
+                <span class="rating-low">{{ movie.rating }}/10</span>
+                {% elif movie.rating <= 6 %}
+                <span class="rating-medium">{{ movie.rating }}/10</span>
+                {% else %}
+                <span class="rating-high">{{ movie.rating }}/10</span>
+                {% endif %}
+            </p>
+        </div>
+
+        <div class="movie-actions">
+            <a href="{% url 'editMovie' movie.id %}">Edit</a>
+            <a href="{% url 'deleteMovie' movie.id %}">Delete</a>
+        </div>
+
+    </div>
+{% endblock %}

@@ -21,7 +21,7 @@ def detailMovie(request, movie_id):
 def addMovie(request):
     if request.method == 'POST':
         title = request.POST['title']
-        genre = request.POST['genre']
+        genre = request.POST['genre'].capitalize()
         platform = request.POST['platform']
         is_finished = request.POST.get('is_finished', False) == 'on'
         rating = request.POST['rating']
@@ -39,7 +39,7 @@ def editMovie(request, movie_id):
     movie = get_object_or_404(Movie, pk=movie_id)
     if request.method == 'POST':
         title = request.POST['title']
-        genre = request.POST['genre']
+        genre = request.POST['genre'].capitalize()
         platform = request.POST['platform']
         is_finished = request.POST.get('is_finished', False) == 'on'
         rating = request.POST['rating']

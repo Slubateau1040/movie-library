@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: snow;
+}
+
+nav {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: wheat;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.movie-card  {
+    padding: 10px;
+    margin: 15px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #ccc;
+    transition: all 0.2s ease;
+}
+
+.movie-card:hover {
+    background-color: #ddd;
+    transform: scale(1.01);
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+
+.movie-card a {
+    text-decoration: none;
+}
+
+#list-title {
+    margin: 10px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: wheat;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.add-movie a {
+    background-color: #333;
+    color: wheat;
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.add-movie {
+    text-align: center;
+}
+
+a.link, a.link:visited {
+    color: wheat;
+}
+
+.filter-form {
+    margin: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.movie-detail h1 {
+    background-color: #333;
+    color: wheat;
+    margin: 10px auto ;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    transition: all 0.2s ease;
+}
+
+.movie-detail h1:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+.movie-info {
+    margin: 20px auto;
+    padding: 15px;
+    border: 3px solid #333;
+    border-radius: 10px;
+    background-color: white;
+    width: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+.movie-actions {
+    width: fit-content;
+    margin: 1px auto;
+}
+
+.movie-actions a {
+    background-color: #333;
+    color: wheat;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.rating-low {
+    color: darkred;
+    font-weight: bold;
+}
+.rating-medium {
+    color: orange;
+    font-weight: bold;
+}
+.rating-high {
+    color: darkgreen;
+    font-weight: bold;
+}
